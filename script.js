@@ -88,8 +88,6 @@ displayTitle.addEventListener("blur", function () {
 document.addEventListener("keydown", function (e) {
   let index = displayTitle.title - 0;
   let elem = document.getElementById(JSON.stringify(index));
-  // elem.className='logo';
-  // console.log(elem.className)
 
   if (index>=0 && index<file.length-1 &&(e.key === "ArrowDown" )) {
     prevactiveid = activeId;
