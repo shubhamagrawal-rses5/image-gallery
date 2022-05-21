@@ -56,7 +56,7 @@ let displayTitle = document.getElementById("displayTitle");
 
 //setting the initial image
 displayImage.src = file[0].previewImage;
-displayTitle.innerText = file[0].title;
+displayTitle.value = file[0].title;
 displayTitle.title = 0;
 displayImage.title = 0;
 
@@ -68,7 +68,7 @@ for (let index = 0; index < list.children.length; index++) {
 
   elem.addEventListener("click", function () {
     displayImage.src = elem.children[0].src;
-    displayTitle.innerHTML = elem.children[1].innerText;
+    displayTitle.value= elem.children[1].innerText;
     displayTitle.title = index;
     displayImage.title = index;
     prevactiveid = activeId;
@@ -77,7 +77,7 @@ for (let index = 0; index < list.children.length; index++) {
   });
 }
 
-// eventListner for aditing title
+// eventListner for editing title
 displayTitle.addEventListener("blur", function () {
   let elem = document.getElementById(displayTitle.title);
   console.log(elem, displayTitle.value);
@@ -94,7 +94,7 @@ document.addEventListener("keydown", function (e) {
     activeId = index + 1;
     changeActive(prevactiveid, activeId);
     displayImage.src = file[index + 1].previewImage;
-    displayTitle.innerText = file[index + 1].title;
+    displayTitle.value = file[index + 1].title;
     displayTitle.title = index + 1;
     displayImage.title = index + 1;
   } else if (e.key === "ArrowUp" && index>=1 && index<file.length) {
@@ -102,7 +102,7 @@ document.addEventListener("keydown", function (e) {
     activeId = index - 1;
     changeActive(prevactiveid, activeId);
     displayImage.src = file[index - 1].previewImage;
-    displayTitle.innerText = file[index - 1].title;
+    displayTitle.value = file[index - 1].title;
     displayTitle.title = index - 1;
     displayImage.title = index - 1;
   }
