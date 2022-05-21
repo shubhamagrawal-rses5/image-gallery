@@ -3,9 +3,11 @@
   margin: auto;
   padding: 5px;
   display: flex;
+  height: 700px;
 }
 .leftbox {
   width: 300px;
+  Overflow-y:scroll;
 }
 .rightbox {
   width: 600px;
